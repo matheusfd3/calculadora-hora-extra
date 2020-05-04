@@ -15,17 +15,17 @@ Utilizando:
 <img alt="sistema" title="sistema" src=".github/utilizando.png" />
 
 ## Instruções (IMPORTANTE)
-- As horas devem ser inseridas no formato 24 horas Caso você ultrapasse o horario de 23:59 de trabalho, dai por diante use 24:00 como meia noite, 25:00 como uma da manhã e assim consecutivamente.
+- As horas devem ser inseridas no formato 24 horas <b>Caso você ultrapasse o horario de 23:59 de trabalho</b>, dai por diante use 24:00 como meia noite, 25:00 como uma da manhã e assim consecutivamente.
 
-- No campo "Dia" você pode deixar explícito o dia desse trabalho. Ex: "20".
+- No campo "<b>Dia</b>" você pode deixar explícito o dia desse trabalho. Ex: "<b>20</b>".
 
-- No campo "Expediente de" informe a quantidade de horas que você DEVE trabalhar. Hora de almoço NÃO conta como expediente.
+- No campo "<b>Expediente de</b>" informe a quantidade de horas que você <b>DEVE</b> trabalhar. Hora de almoço <b>NÃO</b> conta como expediente.
 
-- No campo "Tirou de Almoço" informe o tempo exato que você TIROU de almoço.
+- No campo "<b>Tirou de Almoço</b>" informe o tempo exato que você <b>TIROU</b> de almoço.
 
-- No campo "Entrou às" informe a hora que entrou.
+- No campo "<b>Entrou às</b>" informe a hora que entrou.
 
-- No campo "Saiu às" informe a hora que saiu.
+- No campo "<b>Saiu às</b>" informe a hora que saiu.
 
 ## Conclusão
 Esse sistema tem algumas particularidades, então por favor leia as <b>instruções</b>.
