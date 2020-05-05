@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="content-language" content="pt-br">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<meta name="application-name" content="Calculadora Hora Extra">
+	<meta name="description" content="Se você trabalha muito e não sabe exatamente quanto de hora extra fez, então este site é ideal para você. Nosso sistema faz todo o trabalho chato de calcular horas para você.">
+  	<meta name="keywords" content="calcular hora, calcular hora extra, calcular horas extras, hora extra, calculadora hora extra">
+  	<meta name="revisit-after" content="30 days">
+  	<meta name="category" content="blog">
+  	<meta name="url" content="http://www.calculadorahoraextra.com">
+    <meta name="identifier-URL" content="http://www.calculadorahoraextra.com">
+  	<meta name="author" content="Matheus Ferreira">
+  	<meta name="generator" content="Calculadora Hora Extra">
+   	<meta property="og:locale" content="pt_BR"/>
+   	<meta property="og:type" content="website"/>
+   	<meta property="og:title" content="Calculadora Hora Extra | hora extra"/>
+   	<meta property="og:description" content="Se você trabalha muito e não sabe exatamente quanto de extra fez, então este site é ideal para você. Nosso sistema faz todo o trabalho chato de calcular horas para você.">
+   	<meta property="og:keywords" content="calcular hora, calcular hora extra, calcular horas extras, hora extra, calculadora hora extra">
+   	<meta property="og:url" content="http://www.calculadorahoraextra.com"/>
+   	<meta property="og:site_name" content="Calculadora Hora Extra"/>
+  	<link rel="canonical" href="http://www.calculadorahoraextra.com">
+  	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/w3.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<title>Calculadora Hora Extra | hora extra</title>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li>
+				<button id="botao-abrir-arquivo" class="w3-button w3-white w3-border w3-border-blue w3-round-large">Carregar Horas</button>
+				<input id="input-abrir-arquivo" type="file" accept=".json" style="display: none;">
+			</li>
+			<li>
+				<button id="botao-salvar-arquivo" class="w3-button w3-white w3-border w3-border-blue w3-round-large" disabled>Salvar Horas</button>
+			</li>
+		</ul>
+	</nav>
+
+	<section>
+		<div id="mensagem" class="w3-panel w3-card w3-display-container" style="display: none;">
+			<span onclick="this.parentElement.style.display='none'"class="w3-button w3-large w3-display-topright">&times;</span>
+		</div>
+		<div class="w3-container w3-card-4 w3-light-grey w3-text-blue meu-container-calcular-horas">
+			<h1 class="w3-center">Calcular Horas</h1>
+
+			<div class="w3-row w3-section">
+				<div class="w3-rest">
+						<input id="dia" class="w3-input w3-border" inputmode="numeric" type="text" placeholder="Dia (opcional)">
+				</div>
+			</div>
+
+			<div class="w3-row w3-section">
+		    	<div class="w3-rest">
+		      		<input id="horas-de-expediente" class="w3-input w3-border horas-mascara" inputmode="numeric" type="text" placeholder="Expediente de">
+		    	</div>
+			</div>
+
+			<div class="w3-row w3-section">
+		    	<div class="w3-rest">
+		      		<input id="horas-de-almoco" class="w3-input w3-border horas-mascara" inputmode="numeric" type="text" placeholder="Tirou de Almoço">
+		    	</div>
+			</div>
+
+			<div class="w3-row w3-section">
+			    <div class="w3-rest">
+			    	<input id="hora-de-entrada" class="w3-input w3-border horas-mascara" inputmode="numeric" type="text" placeholder="Entrou às">
+			    </div>
+			</div>
+
+			<div class="w3-row w3-section">
+			    <div class="w3-rest">
+			    	<input id="hora-de-saida" class="w3-input w3-border horas-mascara" inputmode="numeric" type="text" placeholder="Saiu às">
+			    </div>
+			</div>
+			<button id="botao-adicionar-dia" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">Adicionar</button>
+		</div>
+
+		<div class="w3-container meu-container-tabela" style="display: none;">
+			<table id="minha-tabela" class="w3-table-all w3-centered w3-hoverable w3-medium">
+			    <tr class="w3-light-blue">
+						<th>Dia</th>
+			    	<th>Expediente de</th>
+			    	<th>Entrou às</th>
+			    	<th>Tirou de Almoço</th>
+			    	<th>Saiu às</th>
+						<th>Trabalhou</th>
+						<th>Hora extra</th>
+						<th>Excluir</th>
+			    </tr>
+			</table>
+		</div>
+
+		<div class="w3-container meu-container-instrucoes">
+			<h3>Instruções</h3>
+			<ol>
+				<li>As horas devem ser inseridas no formato 24 horas <b>Caso você ultrapasse o horario de 23:59 de trabalho</b>,
+					dai por diante use 24:00 como meia noite, 25:00 como uma da manhã e assim consecutivamente.</li>
+				<li>No campo "<b>Dia</b>" você pode deixar explícito o dia desse trabalho. Ex: "<b>20</b>".</li>
+				<li>No campo "<b>Expediente de</b>" informe a quantidade de horas que você <b>DEVE</b> trabalhar. Hora de almoço <b>NÃO</b> conta como expediente.</li>
+				<li>No campo "<b>Tirou de Almoço</b>" informe o tempo exato que você <b>TIROU</b> de almoço.</li>
+				<li>No campo "<b>Entrou às</b>" informe a hora que entrou.</li>
+				<li>No campo "<b>Saiu às</b>" informe a hora que saiu.</li>
+			</ol>
+		</div>
+
+		<div class="w3-container meu-container-conteudo">
+			<div class="w3-row">
+				<div class="w3-col s12 m12 l12">
+					<h2><strong>Como calcular hora extra?</strong></h2>
+					<p>Para saber calcular hora extra, primeiramente, saber o valor de sua hora trabalhada.</p>
+					<ul>
+						<li>Para saber quanto é sua hora trabalhada basta dividir o seu salário por total de horas trabalhadas por mês, o resultado dessa conta é o seu salário-hora.</li>
+						<li>O valor do seu salário-hora acrescido de 50%, que é o percentual legal da hora extra, será o valor de uma hora extra.</li>
+						<li>Por fim, multiplique o valor de uma hora extra pelo número de horas que você trabalhou a mais. Dessa forma, você saberá o total, em dinheiro, que deverá receber no final do mês, além do salário normal. Lembrando que você pode calcular o total de horas a mais que trabalhou pelo sisteminha criado por mim no inicio desta página.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer>
+		<p>
+			Copyright &copy; 2018 - by Matheus Ferreira <br>
+			<a href="https://www.linkedin.com/in/matheus-ferreira-ab9574155" target="_blank">LinkedIn</a> | 
+			<a href="mailto:matheusfdantas03@gmail.com" target="_blank">Gmail</a> | 
+			<a href="https://github.com/matheusfd3" target="_blank">GitHub</a>
+		</p>
+	</footer>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="js/FileSaver.min.js"></script>
+	<script type="text/javascript" src="js/acoes-dos-elementos.js"></script>
+	<script type="text/javascript" src="js/validacao-de-campos.js"></script>
+	<script type="text/javascript" src="js/funcoes.js"></script>
+</body>
+</html>
